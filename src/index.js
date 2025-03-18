@@ -4,10 +4,9 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener ("submit", function (event){
     event.preventDefault()
     
-   
 
     const taskInput = document.querySelector("#new-task-description")
-    const taskValue = taskInput.value
+    const taskValue = taskInput.value.trim()
 
     
     const listContainer = document.querySelector("#tasks")
@@ -15,16 +14,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const p = document.createElement('p')
     p.innerText= taskValue
-    listContainer.appendChild(p)
+    
 
     const deleteButton = document.createElement ('button')
     deleteButton.innerText = 'Delete'
     deleteButton.addEventListener ('click', function (){
       listContainer.removeChild(taskItem)
     })
-
-    taskItem.appendChild(deleteButton)
     taskItem.appendChild(p)
+    taskItem.appendChild(deleteButton)
+    
     listContainer.appendChild(taskItem)
 
     taskInput.value = ""
