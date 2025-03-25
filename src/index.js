@@ -13,11 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const taskItem = document.createElement('div')
 
     const p = document.createElement('p')
-    p.innerText= taskValue
+    p.textContent= taskValue
     
 
     const deleteButton = document.createElement ('button')
-    deleteButton.innerText = 'Delete'
+    deleteButton.textContent = 'Delete'
     deleteButton.addEventListener ('click', function (){
       listContainer.removeChild(taskItem)
     })
